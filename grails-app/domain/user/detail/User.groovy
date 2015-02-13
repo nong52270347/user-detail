@@ -1,7 +1,7 @@
 package user.detail
 
 class User {
-
+    static searchable = true
     enum Gender{
         MALE,
         FEMALE
@@ -40,17 +40,14 @@ class User {
     User updator
     Date updated
 
-
-
-
 	static constraints = {
-		username blank: false, unique: true
-		password password: true, blank: false
+		 username blank: false, unique: true
+		 password password: true, blank: false
          nameTitle blank: false, nullable: false
          name     blank: false, nullable: false
          surname  blank: false, nullable: false
          gender blank: false, nullable: false
-         cityId blank: false, nullable: false, size: 13..13
+         cityId blank: false, nullable: false, size: 4..13
          milId  blank: false, nullable: false, unique: true,size: 10..10
          division blank: false, nullable: true
          section    blank: false, nullable: true
@@ -72,15 +69,18 @@ class User {
         accountExpired display: false
         accountLocked display: false
         passwordExpired display: false
+
+
+
 	}
 
 	static mapping = {
         table "userlist"
+        //table "view_mtc"
 		password column: '`password`'
         name column: 'firstname'
         username column: 'name'
         id column: 'id'
-
 	}
 
 
@@ -89,9 +89,9 @@ class User {
 	}
 
 
+
 	def beforeInsert() {
 		encodePassword()
-
 	}
 
 	def beforeUpdate() {

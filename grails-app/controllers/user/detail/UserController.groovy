@@ -12,16 +12,333 @@ class UserController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+    static scaffold = true
+
     @Secured(['ROLE_ADMIN'])
     def index() {
         redirect(action: "list", params: params)
     }
 
+    /*@Secured(['ROLE_ADMIN'])
+    def lookup(){
+        def userInstance = User.findAllByDepartmentId("ศทท%")
+        [userInstance: userInstance]
+    }*/
+    /*
     @Secured(['ROLE_ADMIN'])
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [userInstanceList: User.list(params), userInstanceTotal: User.count()]
     }
+    */
+
+
+
+    @Secured(['ROLE_ADMIN'])
+    def list()  {
+        def userList
+        def userCount
+        if(params.q){
+            userList = User.search(params.q + "*").results
+            userCount = userList.size()
+        }
+        else{
+            userList = User.list(params)
+            userCount = User.count()
+        }
+        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
+        [userInstanceList: userList, userInstanceTotal: userCount]
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def listMTC()  {
+        def userList
+        def userCount
+        if(params.q){
+            userList = User.search(params.q + "*").results
+            userCount = userList.size()
+        }
+        else{
+            userList = User.list(params)
+            userCount = User.count()
+        }
+        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
+        [userInstanceMTCList: userList, userInstanceMTCTotal: userCount]
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def listADJ()  {
+        def userList
+        def userCount
+        if(params.q){
+            userList = User.search(params.q + "*").results
+            userCount = userList.size()
+        }
+        else{
+            userList = User.list(params)
+            userCount = User.count()
+        }
+        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
+        [userInstanceADJList: userList, userInstanceADJTotal: userCount]
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def listCIVILAFFAIRS()  {
+        def userList
+        def userCount
+        if(params.q){
+            userList = User.search(params.q + "*").results
+            userCount = userList.size()
+        }
+        else{
+            userList = User.list(params)
+            userCount = User.count()
+        }
+        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
+        [userInstanceCIVILAFFAIRSList: userList, userInstanceCIVILAFFAIRSotal: userCount]
+    }
+
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command1(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command2(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command3(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command4(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command5(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command6(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command7(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command8(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command9(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_command10(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_secretary(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_personnel(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_intelligence(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_operation(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_logistics(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_civil_affairs(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_accountant(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_adj(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_finance(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_mtc(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_personnel_center(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_intelligence_center(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_operation_center(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def show_civil_affairs_center(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command1(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command2(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command3(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command4(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command5(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command6(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command7(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command8(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command9(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_command10(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_secretary(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_personnel(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_intelligence(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_operation(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_logistics(){
+
+    }
+    @Secured(['ROLE_ADMIN'])
+    def list_civil_affairs(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_accountant(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_adj(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_finance(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_mtc(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_personnel_center(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_intelligence_center(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_operation_center(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_civil_affairs_center(){
+
+    }
+
+
 
     @Secured(['ROLE_ADMIN'])
     def create() {
@@ -93,11 +410,14 @@ class UserController {
     @Secured(['ROLE_ADMIN'])
     def show() {
         def userInstance = User.get(params.id)
+
         if (!userInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'user.label', default: 'User'), params.id])
             redirect(action: "list")
             return
         }
+
+
 
 
         [userInstance: userInstance]
