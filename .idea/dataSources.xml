@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="927683971">
+    <data-source source="LOCAL" name="user-detail dev" uuid="8a0ee1a8-6ccd-4898-8f9e-c2ea678247ce">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost/test?useUnicode=yes&amp;characterEncoding=UTF-8</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

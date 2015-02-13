@@ -1,0 +1,23 @@
+#logo h1{
+    float: left;
+    font-size: 28px;
+    margin: 0px;
+
+}
+
+#userPanel{
+    float: right;
+    padding: 4px;
+    height: 36px;
+}
+
+#header{
+    overflow: hidden;
+    padding: 8px;
+    background-color: #abbf78;
+}
+
+#login .inner .cssform label{
+    width: 180px;
+    padding-left: 5px;
+}
