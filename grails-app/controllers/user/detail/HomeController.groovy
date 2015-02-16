@@ -8,7 +8,7 @@ class HomeController {
 
     def index() {
         if (SpringSecurityUtils.ifAnyGranted('ROLE_ADMIN')) {
-            redirect(controller: "user", action: "list")
+            redirect(controller: "user", action: "menu")
         } else if (SpringSecurityUtils.ifAnyGranted('ROLE_USER')){
             redirect(controller: "user", action: "changePassword", id: springSecurityService.currentUser.id)
         } else {

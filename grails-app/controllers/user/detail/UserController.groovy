@@ -32,7 +32,10 @@ class UserController {
     }
     */
 
+    @Secured(['ROLE_ADMIN'])
+    def menu(){
 
+    }
 
     @Secured(['ROLE_ADMIN'])
     def list()  {
@@ -52,172 +55,19 @@ class UserController {
 
     @Secured(['ROLE_ADMIN'])
     def listMTC()  {
-        def userList
-        def userCount
-        if(params.q){
-            userList = User.search(params.q + "*").results
-            userCount = userList.size()
-        }
-        else{
-            userList = User.list(params)
-            userCount = User.count()
-        }
-        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
-        [userInstanceMTCList: userList, userInstanceMTCTotal: userCount]
+
     }
 
     @Secured(['ROLE_ADMIN'])
     def listADJ()  {
-        def userList
-        def userCount
-        if(params.q){
-            userList = User.search(params.q + "*").results
-            userCount = userList.size()
-        }
-        else{
-            userList = User.list(params)
-            userCount = User.count()
-        }
-        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
-        [userInstanceADJList: userList, userInstanceADJTotal: userCount]
+
     }
 
     @Secured(['ROLE_ADMIN'])
     def listCIVILAFFAIRS()  {
-        def userList
-        def userCount
-        if(params.q){
-            userList = User.search(params.q + "*").results
-            userCount = userList.size()
-        }
-        else{
-            userList = User.list(params)
-            userCount = User.count()
-        }
-        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
-        [userInstanceCIVILAFFAIRSList: userList, userInstanceCIVILAFFAIRSotal: userCount]
-    }
-
-
-    @Secured(['ROLE_ADMIN'])
-    def show_command1(){
 
     }
 
-    @Secured(['ROLE_ADMIN'])
-    def show_command2(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_command3(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_command4(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_command5(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_command6(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_command7(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_command8(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_command9(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_command10(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_secretary(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_personnel(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_intelligence(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_operation(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_logistics(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_civil_affairs(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_accountant(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_adj(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_finance(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_mtc(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_personnel_center(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_intelligence_center(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_operation_center(){
-
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def show_civil_affairs_center(){
-
-    }
 
     @Secured(['ROLE_ADMIN'])
     def list_command1(){
@@ -295,6 +145,18 @@ class UserController {
     }
     @Secured(['ROLE_ADMIN'])
     def list_civil_affairs(){
+        def userList
+        def userCount
+        if(params.q){
+            userList = User.search(params.q + "*").results
+            userCount = userList.size()
+        }
+        else{
+            userList = User.list(params)
+            userCount = User.count()
+        }
+        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
+        [userInstanceCIVILAFFAIRSList: userList, userInstanceCIVILAFFAIRSotal: userCount]
 
     }
 
@@ -304,7 +166,19 @@ class UserController {
     }
 
     @Secured(['ROLE_ADMIN'])
-    def list_adj(){
+        def list_adj(){
+        def userList
+        def userCount
+        if(params.q){
+            userList = User.search(params.q + "*").results
+            userCount = userList.size()
+        }
+        else{
+            userList = User.list(params)
+            userCount = User.count()
+        }
+        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
+        [userInstanceADJList: userList, userInstanceADJTotal: userCount]
 
     }
 
@@ -315,6 +189,18 @@ class UserController {
 
     @Secured(['ROLE_ADMIN'])
     def list_mtc(){
+        def userList
+        def userCount
+        if(params.q){
+            userList = User.search(params.q + "*").results
+            userCount = userList.size()
+        }
+        else{
+            userList = User.list(params)
+            userCount = User.count()
+        }
+        params.max = Math.min(params.max ? params.int('max') : 10, 1000)
+        [userInstanceMTCList: userList, userInstanceMTCTotal: userCount]
 
     }
 
@@ -334,7 +220,17 @@ class UserController {
     }
 
     @Secured(['ROLE_ADMIN'])
+    def list_logistic_center(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
     def list_civil_affairs_center(){
+
+    }
+
+    @Secured(['ROLE_ADMIN'])
+    def list_accountant_center(){
 
     }
 
