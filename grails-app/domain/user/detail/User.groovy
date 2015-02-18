@@ -76,7 +76,6 @@ class User {
 
 	static mapping = {
         table "userlist"
-        //table "view_mtc"
 		password column: '`password`'
         name column: 'firstname'
         username column: 'name'

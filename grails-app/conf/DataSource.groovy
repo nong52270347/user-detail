@@ -13,23 +13,30 @@ hibernate {
 environments {
     development {
 
-     /*   dataSource {
+        /*dataSource {
             username = "root"
             password = "root1234"
+            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            url = "jdbc:mysql://localhost/test?useUnicode=yes&characterEncoding=UTF-8"
+        }*/
+
+        /*dataSource {
+            username = "root"
+            password = "123456"
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost/test?useUnicode=yes&characterEncoding=UTF-8"
         }*/
 
         dataSource {
             username = "root"
-            password = "123456"
+            password = "adm@123"
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost/test?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     test {
 
-/*       dataSource {
+       /*dataSource {
 
             username = "root"
             password = "root1234"
@@ -37,16 +44,23 @@ environments {
             url = "jdbc:mysql://localhost/user-detail?useUnicode=yes&characterEncoding=UTF-8"
         }*/
 
-      dataSource {
+      /*dataSource {
             username = "root"
             password = "123456"
+            dbCreate = "update"
+            url = "jdbc:mysql://localhost/user-detail?useUnicode=yes&characterEncoding=UTF-8"
+        }*/
+
+        dataSource {
+            username = "root"
+            password = "adm@123"
             dbCreate = "update"
             url = "jdbc:mysql://localhost/user-detail?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     production {
 
-/*        dataSource {
+        /*dataSource {
 
             username = "root"
             password = "root1234"
@@ -66,7 +80,7 @@ environments {
         }*/
 
 
-        dataSource {
+        /*dataSource {
             username = "root"
             password = "123456"
             dbCreate = "update"
@@ -81,6 +95,24 @@ environments {
                testWhileIdle=true
                testOnReturn=true
                validationQuery="SELECT 1"
+            }
+        }*/
+
+        dataSource {
+            username = "root"
+            password = "adm@123"
+            dbCreate = "update"
+            url = "jdbc:mysql://localhost/test?useUnicode=yes&characterEncoding=UTF-8"
+            pooled = true
+            properties {
+                maxActive = -1
+                minEvictableIdleTimeMillis=1800000
+                timeBetweenEvictionRunsMillis=1800000
+                numTestsPerEvictionRun=3
+                testOnBorrow=true
+                testWhileIdle=true
+                testOnReturn=true
+                validationQuery="SELECT 1"
             }
         }
     }

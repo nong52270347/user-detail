@@ -45,7 +45,7 @@
 				</thead>
 				<tbody>
 				%{--<g:each in="${userInstanceList}" status="i" var="userInstance">--}%
-				<g:each in="${User.findAllByDepartmentId("ฝกร.ศปก.ทบ")}" status="i" var="userInstance">
+				<g:each in="${User.findAllByDepartmentIdOrDepartmentId("ฝกร.ศปก.ทบ.","ฝกร.ศปก.ทบ")}" status="i" var="userInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
 						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>

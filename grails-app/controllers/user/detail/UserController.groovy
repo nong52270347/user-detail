@@ -220,7 +220,7 @@ class UserController {
     }
 
     @Secured(['ROLE_ADMIN'])
-    def list_logistic_center(){
+    def list_logistics_center(){
 
     }
 
